@@ -3,7 +3,7 @@ info:
   title: Simple API overview
   version: 2.0.0
 paths:
-  /:
+  /simple:
     get:
       operationId: listVersionsv2
       summary: List API versions
@@ -79,7 +79,7 @@ paths:
                          }
                      ]
                     }
-  /v2:
+  /simple/v2:
     get:
       operationId: getVersionDetailsv2
       summary: Show API version details
