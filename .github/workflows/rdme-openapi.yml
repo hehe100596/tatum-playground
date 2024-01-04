@@ -17,15 +17,12 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v3
 
-      - name: List OpenAPI files
-        id: list-files
-        run: |
-          echo "::set-output name=files::$(find . -name '*.yaml' -o -name '*.json' -type f -print0 | tr '\0' '\n')"
-
-      - name: Run `openapi` command for each file 🚀
+      - name: Run `openapi` command 🚀
         uses: readmeio/rdme@v8
-        run: |
-          for file in ${{ steps.list-files.outputs.files }}; do
-            echo "Processing $file"
-            openapi $file --key=${{ secrets.README_API_KEY }} --id=6594141cd3dc9c00600a98c5
-          done
+        with:
+          rdme: openapi rpc/ethereum.yaml --key=${{ secrets.README_API_KEY }} --id=6594141cd3dc9c00600a98c5
+
+      - name: Run `openapi` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi rpc/algorand.yaml --key=${{ secrets.README_API_KEY }} --id=6596cf7a1065e5000fe12649
