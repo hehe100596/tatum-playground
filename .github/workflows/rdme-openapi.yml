@@ -17,12 +17,16 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v3
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
-        with:
-          rdme: openapi rpc/ethereum.yaml --key=${{ secrets.README_API_KEY }} --id=6594141cd3dc9c00600a98c5
+      # RPC
 
-      - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
-        with:
-          rdme: openapi rpc/algorand.yaml --key=${{ secrets.README_API_KEY }} --id=6596cf7a1065e5000fe12649
+      - name: Ethereum API
+        env:
+          README_API_KEY: ${{ secrets.README_API_KEY }}
+        working-directory: ./rpc
+        run: rdme openapi ethereum.yml --key=$README_API_KEY --id=6594141cd3dc9c00600a98c5
+
+      - name: Algorand API
+        env:
+          README_API_KEY: ${{ secrets.README_API_KEY }}
+        working-directory: ./rpc
+        run: rdme openapi algorand.yml --key=$README_API_KEY --id=6596cf7a1065e5000fe12649
