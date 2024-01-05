@@ -1,0 +1,9 @@
+openapi: 3.1.0
+info:
+  title: RPC
+  version: "1.0"
+paths:
+  /ethereum/{apiKey}:
+    $ref: "rpc/ethereum.yml#/components/pathItems/path"
+  /algorand/{apiKey}:
+    $ref: "rpc/algorand.yml#/paths/~1eth_accounts"

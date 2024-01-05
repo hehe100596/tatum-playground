@@ -19,6 +19,13 @@ jobs:
 
       # RPC
 
+      - name: RPC
+        env:
+          README_API_KEY: ${{ secrets.README_API_KEY }}
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi rpc/rpc.yml --key=${{ secrets.README_API_KEY }} --id=65982f7b8d81bf00695175d3
+
       - name: Ethereum
         env:
           README_API_KEY: ${{ secrets.README_API_KEY }}
