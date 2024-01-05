@@ -19,14 +19,16 @@ jobs:
 
       # RPC
 
-      - name: Ethereum API
+      - name: Ethereum
         env:
           README_API_KEY: ${{ secrets.README_API_KEY }}
-        working-directory: ./rpc
-        run: rdme openapi ethereum.yml --key=$README_API_KEY --id=6594141cd3dc9c00600a98c5
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi rpc/ethereum.yml --key=${{ secrets.README_API_KEY }} --id=6594141cd3dc9c00600a98c5
 
-      - name: Algorand API
+      - name: Algorand
         env:
           README_API_KEY: ${{ secrets.README_API_KEY }}
-        working-directory: ./rpc
-        run: rdme openapi algorand.yml --key=$README_API_KEY --id=6596cf7a1065e5000fe12649
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi rpc/algorand.yml --key=${{ secrets.README_API_KEY }} --id=6596cf7a1065e5000fe12649
