@@ -1,5 +1,0 @@
-get:
-  summary: alg_version
-  description: Returns version or something.
-  tags: ["algorand"]
-  operationId: alg_version

@@ -1,5 +1,0 @@
-get:
-  summary: eth_version
-  description: Returns version or something.
-  tags: ["ethereum"]
-  operationId: eth_version
