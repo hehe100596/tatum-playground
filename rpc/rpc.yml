@@ -3,7 +3,11 @@ info:
   title: RPC
   version: "1.0"
 paths:
-  /ethereum/{apiKey}:
-    $ref: "rpc/paths/ethereum.yml#/paths/~1eth_accounts~1${apiKey}"
-  /algorand/{apiKey}:
-    $ref: "rpc/paths/algorand.yml#/paths/~1eth_accounts~1${apiKey}"
+  /eth_accounts/{apiKey}:
+    $ref: "rpc/operations/eth/accounts.yml"
+  /alg_accounts/{apiKey}:
+    $ref: "rpc/operations/alg/accounts.yml"
+  /eth_version:
+    $ref: "rpc/operations/eth/version.yml"
+  /alg_version:
+    $ref: "rpc/operations/alg/version.yml"
