@@ -4,6 +4,6 @@ info:
   version: "1.0"
 paths:
   /ethereum/{apiKey}:
-    $ref: "rpc/ethereum.yml#/components/pathItems/path"
+    $ref: "rpc/paths/ethereum.yml#/paths/~1eth_accounts~1${apiKey}"
   /algorand/{apiKey}:
-    $ref: "rpc/algorand.yml#/paths/~1eth_accounts"
+    $ref: "rpc/paths/algorand.yml#/paths/~1eth_accounts~1${apiKey}"
