@@ -17,18 +17,23 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v3
 
-      # RPC
+      - name: Data API
+        env:
+          README_API_KEY: ${{ secrets.README_API_KEY }}
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi data_api/openapi.yml --key=${{ secrets.README_API_KEY }} --id=6594141cd3dc9c00600a98c5
+
+      - name: Notifications
+        env:
+          README_API_KEY: ${{ secrets.README_API_KEY }}
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi notifications/openapi.yml --key=${{ secrets.README_API_KEY }} --id=6596cf7a1065e5000fe12649
 
       - name: RPC
         env:
           README_API_KEY: ${{ secrets.README_API_KEY }}
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi rpc/rpc.yml --key=${{ secrets.README_API_KEY }} --id=65982f7b8d81bf00695175d3
-
-      - name: Whatever
-        env:
-          README_API_KEY: ${{ secrets.README_API_KEY }}
-        uses: readmeio/rdme@v8
-        with:
-          rdme: openapi rpc/rpc.yml --key=${{ secrets.README_API_KEY }} --id=6596cf7a1065e5000fe12649
+          rdme: openapi rpc/openapi.yml --key=${{ secrets.README_API_KEY }} --id=65982f7b8d81bf00695175d3

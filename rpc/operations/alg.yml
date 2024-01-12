@@ -7,7 +7,7 @@ paths:
     post:
       summary: alg_accounts
       description: Returns a list of addresses owned by client. Exclusive for Algorand.
-      tags: ["algorand"]
+      tags: ["alg"]
       parameters:
         - name: apiKey
           in: path
@@ -22,10 +22,10 @@ paths:
               </style>
               For higher throughput, <span class="custom-style"><a href="https://alchemy.com/?a=docs-demo" target="_blank">create your own API key</a></span>
           required: true
-      operationId: alg-accounts
+      operationId: alg_accounts
   version:
     get:
       summary: alg_version
       description: Returns version or something.
-      tags: ["algorand"]
+      tags: ["alg"]
       operationId: alg_version
